@@ -1,0 +1,15 @@
+.App {
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+footer {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+}
