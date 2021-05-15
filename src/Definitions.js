@@ -2,7 +2,6 @@ import React from "react";
 import Synonyms from "./Synonyms";
 
 export default function Definitions(props) {
-  console.log(props.data);
   return (
     <div className="Definitions">
       <h3>{props.data.partOfSpeech}</h3>
