@@ -1,3 +1,43 @@
+.Dictionary {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.Dictionary h1 {
+  font-size: 75px;
+  text-align: center;
+}
+
+.search {
+  padding: 40px 0 0 0;
+}
+
 .searchSection {
   text-align: center;
+  box-shadow: 0 2px 8px rgb(0 48 130 / 10%), 4px 12px 24px rgb(4 53 88 / 10%);
+}
+
+.searchHeading {
+  font-size: 25px;
+  padding: 0 0 10px;
+}
+
+.searchBar {
+  border: 0px;
+  outline: none;
+  width: 90%;
+  font-size: 30px;
+  padding: 0 10px;
+  color: #61686d;
+}
+
+.searchSection {
+  align-items: center;
+  padding: 10px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.searchIcon {
+  font-size: 30px;
+  padding: 8px;
 }

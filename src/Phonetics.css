@@ -1,0 +1,17 @@
+.phoneticText {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.playAudio {
+  color: #e05780;
+  font-size: 30px;
+  padding-right: 5px;
+}
+
+.playAudio:hover {
+  color: #8a2846;
+  font-size: 30px;
+  padding-right: 5px;
+  cursor: pointer;
+}

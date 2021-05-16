@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
+import "./Phonetics.css";
 
 export default function Phonetics(props) {
   function play(event) {
@@ -12,7 +13,7 @@ export default function Phonetics(props) {
       <span className="playAudio" onClick={play}>
         <AiFillPlayCircle />
       </span>
-      {props.phonetics.text}
+      <span className="phoneticText">{props.phonetics.text}</span>
     </div>
   );
 }

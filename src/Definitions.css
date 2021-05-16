@@ -1,0 +1,23 @@
+.meaning {
+  margin: 10px 0;
+}
+
+.Definitions h3 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #e05780;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.example {
+  font-size: 18px;
+  font-style: italic;
+  opacity: 0.7;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+}
