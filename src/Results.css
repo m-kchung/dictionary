@@ -7,13 +7,7 @@
   margin: 0;
 }
 
-.Results section {
-  background: #ffffff;
-  padding: 30px;
-  margin: 20px 0;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgb(0 48 130 / 10%), 4px 12px 24px rgb(4 53 88 / 10%);
-}
+
 
 .Results .word {
   margin-bottom: 40px;
