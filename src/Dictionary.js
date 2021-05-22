@@ -4,12 +4,24 @@ import axios from "axios";
 import Results from "./Results";
 import Images from "./Images";
 import { FaSearch } from "react-icons/fa";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 export default function Dictionary(props) {
   const [loaded, setLoaded] = useState(false);
   const [keyword, setKeyword] = useState(props.defaultKeyword);
   const [results, setResults] = useState(null);
   const [images, setImages] = useState("");
+  const [language, setLanguage] = useState("en_GB");
+
+  function setBritishEnglish(event) {
+    event.preventDefault();
+    setLanguage("en_GB");
+  }
+
+  function setAmericanEnglish(event) {
+    event.preventDefault();
+    setLanguage("en_US");
+  }
 
   function handleKeywordChange(event) {
     setKeyword(event.target.value);
@@ -25,7 +37,7 @@ export default function Dictionary(props) {
 
   function search() {
     // API documentation link: https://dictionaryapi.dev/
-    let languageCode = "en_GB";
+    let languageCode = language;
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/${languageCode}/${keyword}`;
     axios.get(apiUrl).then(handleDictionaryResponse);
 
@@ -52,34 +64,102 @@ export default function Dictionary(props) {
     search();
   }
 
-  if (loaded) {
+  if (loaded && language === "en_GB") {
     return (
       <div className="Dictionary">
-        <h1>Dictionary</h1>
-        <div className="search">
-          <div className="searchHeading">What word do you want to look up?</div>
-          <div className="searchSection">
-            <form onSubmit={handleSubmit}>
-              <span className="searchIcon">
-                <FaSearch />
+        <div className="backgroundTop">
+          <div className="Menu">
+            <div className="dropdown">
+              <button className="dropbtn">
+                🇬🇧 <RiArrowDownSLine />
+              </button>
+              <div className="dropdown-content">
+                <a href="/" onClick={setAmericanEnglish}>
+                  🇺🇸
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="topSection">
+            <div className="searchHeading">
+              <h1>Dictionary</h1>
+            </div>
+            <div className="search">
+              <span className="searchForm">
+                <form onSubmit={handleSubmit}>
+                  <button type="submit" className="searchIcon searchButton">
+                    <FaSearch />
+                  </button>
+                  <input
+                    type="search"
+                    placeholder="Search for a word"
+                    autoComplete="off"
+                    onChange={handleKeywordChange}
+                    className="searchBar"
+                    defaultValue={props.defaultKeyword}
+                  />
+                </form>
               </span>
-              <input
-                type="search"
-                placeholder="Search for a word"
-                autoComplete="off"
-                onChange={handleKeywordChange}
-                className="searchBar"
-                defaultValue={props.defaultKeyword}
-              />
-            </form>
+            </div>
           </div>
         </div>
-        <Results results={results} />
-        <Images images={images} keyword={keyword} />
+        <div className="resultsSection">
+          <Results results={results} />
+          <Images images={images} keyword={keyword} />
+        </div>
+      </div>
+    );
+  }
+  if (loaded && language === "en_US") {
+    return (
+      <div className="Dictionary">
+        <div className="backgroundTop">
+          <div className="Menu">
+            <div className="dropdown">
+              <button className="dropbtn">
+                🇺🇸 <RiArrowDownSLine />
+              </button>
+              <div className="dropdown-content">
+                <a href="/" onClick={setBritishEnglish}>
+                  🇬🇧
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="topSection">
+            <div className="searchHeading">
+              <h1>Dictionary</h1>
+            </div>
+            <div className="search">
+              <span className="searchForm">
+                <form onSubmit={handleSubmit}>
+                  <button type="submit" className="searchIcon searchButton">
+                    <FaSearch />
+                  </button>
+                  <input
+                    type="search"
+                    placeholder="Search for a word"
+                    autoComplete="off"
+                    onChange={handleKeywordChange}
+                    className="searchBar"
+                    defaultValue={props.defaultKeyword}
+                  />
+                </form>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="resultsSection">
+          <Results results={results} />
+          <Images images={images} keyword={keyword} />
+        </div>
       </div>
     );
   } else {
     load();
+
     return "loading";
   }
 }

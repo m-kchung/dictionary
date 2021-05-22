@@ -1,6 +1,16 @@
-.Dictionary {
+.backgroundTop {
+  background-color: pink;
+  padding-bottom: 40px;
+}
+
+.Dictionary .topSection {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 700px;
+}
+.searchHeading {
+  font-size: 25px;
+  padding: 0 0 10px;
+  text-align: center;
 }
 .Dictionary h1 {
   font-size: 75px;
@@ -8,43 +18,110 @@
 }
 
 .search {
-  padding: 40px 0 0 0;
-}
-
-.searchSection {
+  padding-top: 20px;
   text-align: center;
+}
+
+.searchForm {
+  display: inline;
   box-shadow: 0 2px 8px rgb(0 48 130 / 10%), 4px 12px 24px rgb(4 53 88 / 10%);
-}
-
-.searchHeading {
-  font-size: 25px;
-  padding: 0 0 10px;
-}
-
-.searchBar {
-  border: 0px;
-  outline: none;
-  width: 90%;
-  font-size: 30px;
-  padding: 0 10px;
-  color: #61686d;
-}
-
-.searchSection {
-  align-items: center;
-  padding: 10px;
+  padding: 20px 20px 15px 20px;
   background: #fff;
   border-radius: 30px;
 }
 
+.Dictionary .searchButton {
+  border: none;
+  background-color: transparent;
+}
+.searchBar {
+  border: 0px;
+  outline: none;
+  font-size: 25px;
+  color: #61686d;
+  width: 80%;
+}
+
+.Dictionary form {
+  display: inline;
+}
+
 .searchIcon {
   font-size: 30px;
-  padding: 8px;
+  padding: 0 15px 0 0;
+  color: #61686d;
 }
 .Dictionary section {
   background: #ffffff;
   padding: 30px;
   margin: 20px 0;
   border-radius: 20px;
-  box-shadow: 0 2px 8px rgb(0 48 130 / 10%), 4px 12px 24px rgb(4 53 88 / 10%);
+  box-shadow: 4px 4px 14px rgb(0 48 130 / 10%);
+}
+
+.resultsSection {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.Menu {
+  text-align: right;
+  margin: 0 auto;
+  padding-top: 15px;
+  max-width: 800px;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 6px 3px 6px 10px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 55px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin: 1px;
+  text-align: left;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  padding: 8px 16px 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  text-decoration: none;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #c5ddc6;
 }
