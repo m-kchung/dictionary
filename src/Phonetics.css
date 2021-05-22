@@ -4,13 +4,13 @@
 }
 
 .playAudio {
-  color: #e05780;
+  color: #eb929f;
   font-size: 30px;
   padding-right: 5px;
 }
 
 .playAudio:hover {
-  color: #8a2846;
+  color: #cc5163;
   font-size: 30px;
   padding-right: 5px;
   cursor: pointer;
